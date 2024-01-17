@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  background: salmon;
+
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+
+  /* 字体居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  /* 允许选中元素, 拖动窗口 */
+  -webkit-app-region: drag;
+}
+
+textarea {
+  -webkit-app-region: no-drag;
+}
