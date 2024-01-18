@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- // 设置 Content-Security-Policy, 只允许加载本地资源 -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';script-src 'self'"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main">123456</div>
+    <div class="main">后盾人</div>
     <script src="renderer.js"></script>
   </body>
 </html>
