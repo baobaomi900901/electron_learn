@@ -3,9 +3,10 @@ const { BrowserWindow, app, screen } = require('electron'); // 窗口管理模�
 const path = require('path');
 
 const createWindow = () => {
+    // 创建窗口到指定显示器
     const displays = screen.getAllDisplays();
     const targetDisplay = displays.find((display) => {
-        return display.id === 3
+        return display.id === 2
     })
 
     const mainWindow = new BrowserWindow({
