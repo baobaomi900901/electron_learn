@@ -1,26 +1,22 @@
 const { Menu } = require('electron')
 
-const createMenu = (win) => {
+const CreateMenu = () => {
     const template = [
         {
-            label: 'File',
+            label: '文件',
             submenu: [
                 {
-                    label: 'Custom Quit',
+                    label: '增加',
                     click: () => {
-                        console.log('Custom Quit Clicked!');
-                        console.log('win.webContents :>>', win.webContents);
-                        // win.webContents.send('test')
+                        console.log('增加333');
                     }
                 }
             ]
-        },
+        }
     ]
 
-
     const menu = Menu.buildFromTemplate(template)
-    Menu.setApplicationMenu(menu)  // 创建菜单, 并设置菜单
-    // console.log('menu :>>', menu);
+    Menu.setApplicationMenu(menu)
 }
 
-module.exports = { createMenu };
+module.exports = { CreateMenu }

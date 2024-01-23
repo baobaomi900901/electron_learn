@@ -1,5 +1,5 @@
 const { BrowserWindow, app, screen, ipcMain, Menu } = require('electron');
-const { createMenu } = require('./menu.js');
+const { CreateMenu } = require('./menu.js')
 const path = require('path');
 
 const createWindow = () => {
@@ -13,9 +13,9 @@ const createWindow = () => {
         width: 800,
         height: 600,
         alwaysOnTop: true,
-        x: targetDisplay.bounds.x + 50,
-        y: targetDisplay.bounds.y + 50,
-        frame: false,
+        x: targetDisplay.bounds.x + 25,
+        y: targetDisplay.bounds.y + 25,
+        // frame: false,
         // 预加载脚本
         webPreferences: {
             preload: path.join(__dirname, 'preload.js'), // 但预加载的 js 文件内仍可以使用 Nodejs 的 API
@@ -29,7 +29,7 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-    // createMenu();
+    CreateMenu()
     createWindow();
 });
 
