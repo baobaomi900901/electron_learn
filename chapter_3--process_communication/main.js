@@ -25,11 +25,10 @@ const createWindow = () => {
     });
     mainWindow.webContents.openDevTools();
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
-
+    CreateMenu(mainWindow)
 }
 
 app.whenReady().then(() => {
-    CreateMenu()
     createWindow();
 });
 

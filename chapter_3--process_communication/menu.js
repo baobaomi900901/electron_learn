@@ -1,6 +1,6 @@
 const { Menu } = require('electron')
 
-const CreateMenu = () => {
+const CreateMenu = (win) => {
     const template = [
         {
             label: '文件',
@@ -9,6 +9,8 @@ const CreateMenu = () => {
                     label: '增加',
                     click: () => {
                         console.log('增加333');
+                        console.log(win.webContents);
+                        win.webContents.send('add')
                     }
                 }
             ]

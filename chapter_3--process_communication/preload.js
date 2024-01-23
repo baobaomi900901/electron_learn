@@ -9,6 +9,8 @@ contextBridge.exposeInMainWorld('mb', {
 })
 
 
-// ipcRenderer.on('test', () => {
-//     console.log('333');
-// })
+ipcRenderer.on('add', () => {
+    console.log('add 333');
+    const el = document.querySelector('#counter')
+    el.innerHTML = Number(el.innerHTML) + 1
+})
