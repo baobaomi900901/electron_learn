@@ -8,9 +8,7 @@ const CreateMenu = (win) => {
                 {
                     label: '增加',
                     click: () => {
-                        console.log('增加333');
-                        console.log(win.webContents);
-                        win.webContents.send('add')
+                        win.webContents.send('add', 2)
                     }
                 }
             ]
