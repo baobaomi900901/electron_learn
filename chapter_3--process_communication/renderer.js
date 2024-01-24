@@ -19,7 +19,9 @@ window.addEventListener('DOMContentLoaded', () => {
     const btn2 = document.querySelector('#btn2');
     const input = document.querySelector('#input');
 
-    btn2.addEventListener('click', async () => {
-        input.value = await window.api.upload('已经获取 filePath : ');
+    btn2.addEventListener('click', () => {
+        window.api.upload((file) => {
+            input.value = file
+        }, `@渲染进程已收获取 filePath : ${input.value}`)
     })
 })

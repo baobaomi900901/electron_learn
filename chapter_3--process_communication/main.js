@@ -33,7 +33,7 @@ app.whenReady().then(() => {
 
 // 4.监听渲染进程的事件, 并传递给主进程
 ipcMain.on('receive', (event, arg) => {
-    console.log(arg);
+    console.log('接收到的参数 :>>', arg);
 });
 
 
