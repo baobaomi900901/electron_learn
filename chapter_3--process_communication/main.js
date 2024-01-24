@@ -32,7 +32,8 @@ app.whenReady().then(() => {
     createWindow();
 });
 
-// 监听事件
-ipcMain.on("saveFile", () => {
-    console.log("@主进程接收到事件 :>> saveFile")
+// 监听 渲染进程的事件 [saveFile]
+ipcMain.on("MainSend", (event, callback) => {
+    console.log("@主进程接收到事件 :>> MainSend", callback);
+    BrowserWindow.fromWebContents(event.sender).webContents.send('msg', 1)
 })
