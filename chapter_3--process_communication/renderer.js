@@ -11,5 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btn.addEventListener('click', () => {
         counter.innerHTML = Number(counter.innerHTML) + arg;
+        window.api.send('receive', counter.innerHTML); // 6.向主进程发送数据
     })
 })

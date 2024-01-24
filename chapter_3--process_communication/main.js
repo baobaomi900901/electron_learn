@@ -31,6 +31,7 @@ app.whenReady().then(() => {
     createWindow();
 });
 
+// 4.监听渲染进程的事件, 并传递给主进程
 ipcMain.on('receive', (event, arg) => {
     console.log(arg);
 });
