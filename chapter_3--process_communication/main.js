@@ -43,3 +43,9 @@ ipcMain.handle('selectFile', async (event, arg) => {
     console.log(' 渲染进程传递的消息 :>>', arg, filePaths[0]);
     return filePaths[0];
 })
+
+ipcMain.handle('updateTitle', async (event, newTitle) => {
+    console.log('主进程 :>>', newTitle);
+    BrowserWindow.fromWebContents(event.sender).title = newTitle
+    console.log('修改成功');
+})

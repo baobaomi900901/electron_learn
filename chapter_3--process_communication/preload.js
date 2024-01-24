@@ -13,5 +13,9 @@ contextBridge.exposeInMainWorld(
     upload: async (callback, arg) => {
         console.log(" @@@@:>>", await ipcRenderer.invoke('selectFile', arg));
         return callback(await ipcRenderer.invoke('selectFile', arg));
+    },
+    changeTitle: async (newTitle) => {
+        console.log('预加载 :>>', newTitle);
+        ipcRenderer.invoke('updateTitle', newTitle)
     }
 });

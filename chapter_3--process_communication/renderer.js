@@ -24,4 +24,12 @@ window.addEventListener('DOMContentLoaded', () => {
             input.value = file
         }, `@渲染进程已收获取 filePath : ${input.value}`)
     })
+
+    // 修改标题
+    const btn3 = document.querySelector('#btn3');
+    const input2 = document.querySelector('#input2');
+    btn3.addEventListener('click', () => {
+        window.api.changeTitle(input2.value)
+        // console.log(input2.value);
+    })
 })
