@@ -35,3 +35,11 @@ app.whenReady().then(() => {
 ipcMain.on('receive', (event, arg) => {
     console.log(arg);
 });
+
+
+// 上传文件
+ipcMain.handle('selectFile', async (event, arg) => {
+    const { filePaths } = await dialog.showOpenDialog({});
+    console.log(' 渲染进程传递的消息 :>>', arg, filePaths[0]);
+    return filePaths[0];
+})

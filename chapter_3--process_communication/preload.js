@@ -9,5 +9,8 @@ contextBridge.exposeInMainWorld(
     },
     send: (channel, data) => { // 5.监听来自渲染进程的事件, 并传递给主进程
         ipcRenderer.send(channel, data);
+    },
+    upload: async (arg) => {
+        return ipcRenderer.invoke('selectFile', arg);
     }
 });

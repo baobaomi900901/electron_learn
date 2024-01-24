@@ -13,4 +13,13 @@ window.addEventListener('DOMContentLoaded', () => {
         counter.innerHTML = Number(counter.innerHTML) + arg;
         window.api.send('receive', counter.innerHTML); // 6.向主进程发送数据
     })
+
+
+    // 上传文件
+    const btn2 = document.querySelector('#btn2');
+    const input = document.querySelector('#input');
+
+    btn2.addEventListener('click', async () => {
+        input.value = await window.api.upload('已经获取 filePath : ');
+    })
 })

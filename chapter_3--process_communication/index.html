@@ -10,9 +10,15 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>主进程的参数 to 渲染进程 传递参数</h1>
+    <h1>主进程&渲染进程 双向数据绑定</h1>
     <div id="counter">1.1</div>
     <button id="btn">添加</button>
+    <br />
+    <!-- 分割线 -->
+    <hr />
+    <br />
+    <button id="btn2">上传文件</button>
+    <input type="text" id="input" />
     <script src="renderer.js"></script>
   </body>
 </html>
@@ -24,5 +30,16 @@
   }
   body {
     padding: 2rem;
+  }
+  button {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin: 0 1rem 0.5rem 0;
+  }
+  input {
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
   }
 </style>
