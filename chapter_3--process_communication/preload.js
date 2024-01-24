@@ -8,6 +8,11 @@ contextBridge.exposeInMainWorld('api', { // 与渲染进程通信, 通过 window
     },
     MainSend: (v) => { // 向主进程发送通知
         ipcRenderer.send('MainSend', v)
+    },
+    UIpload: async () => {
+        const filePath = await ipcRenderer.invoke('selectFile')
+        console.log('filePath :>>', filePath);
+        document.querySelector('input').value = filePath
     }
 })
 

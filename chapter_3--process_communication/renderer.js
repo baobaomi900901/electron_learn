@@ -18,4 +18,9 @@ window.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
         window.api.MainSend(el.innerHTML) // 向主进程发送通知, 将 '渲染' 传递给预加载进程, 然后预加载进程再传递给主进程
     })
+
+    const btn2 = document.querySelector('#btn2')
+    btn2.addEventListener('click', () => {
+        window.api.UIpload()
+    })
 })

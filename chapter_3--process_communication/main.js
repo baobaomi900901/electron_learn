@@ -1,4 +1,4 @@
-const { BrowserWindow, app, screen, ipcMain, Menu } = require('electron');
+const { BrowserWindow, app, screen, ipcMain, Menu, dialog } = require('electron');
 const { CreateMenu } = require('./menu.js')
 const path = require('path');
 
@@ -33,7 +33,13 @@ app.whenReady().then(() => {
 });
 
 // 监听 渲染进程的事件 [saveFile]
-ipcMain.on("MainSend", (event, callback) => {
-    console.log("@主进程接收到事件 :>> MainSend", callback);
+ipcMain.on("MainSend", (event, rec) => {
+    console.log("@主进程接收到事件 :>> MainSend", rec);
     BrowserWindow.fromWebContents(event.sender).webContents.send('msg', 1)
+})
+
+ipcMain.handle("selectFile", async (event, rec) => {
+    const { filePaths } = await dialog.showOpenDialog({})
+    console.log(filePaths[0]);
+    return filePaths[0]
 })
