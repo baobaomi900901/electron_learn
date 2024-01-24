@@ -1,21 +1,10 @@
-const { ipcRenderer, contextBridge } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron');
 
-contextBridge.exposeInMainWorld('api', { // 与渲染进程通信, 通过 window.api.xxx 调用
-    AddCounter: (callback) => {
-        ipcRenderer.on('add', (event, value) => {
-            callback(value)
-        })
-    },
-    MainSend: (v) => { // 向主进程发送通知
-        ipcRenderer.send('MainSend', v)
-    },
-    UIpload: async () => {
-        const filePath = await ipcRenderer.invoke('selectFile')
-        console.log('filePath :>>', filePath);
-        document.querySelector('input').value = filePath
+contextBridge.exposeInMainWorld(
+    'api', {
+    on: (channel, func) => {
+        ipcRenderer.on(channel, (event, ...args) => {
+            return func(...args)
+        });
     }
-})
-
-ipcRenderer.on('msg', (event, message) => { // 监听主进程的通知
-    console.log('渲染进程 msg :>>', message);
-})
+});
