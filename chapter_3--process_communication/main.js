@@ -20,6 +20,7 @@ const createWindow = () => {
     mainWindow.webContents.openDevTools();
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
 
+    // 1.传递数据给预加载进程
     mainWindow.webContents.on('did-finish-load', () => {
         mainWindow.webContents.send('add2', 2);
     });
@@ -30,4 +31,6 @@ app.whenReady().then(() => {
     createWindow();
 });
 
-
+ipcMain.on('receive', (event, arg) => {
+    console.log(arg);
+});
