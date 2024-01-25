@@ -27,10 +27,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const result = document.querySelector('#res');
     btn3.addEventListener('click', () => {
         if (number.value !== '') {
-            window.api.add((num) => {
-                result.innerHTML = num + number.value * 1;
-            },
-                result.innerHTML)
+            let newNumb
+            window.api.add(
+                (num) => {
+                    result.innerHTML = num + number.value * 1;
+                },
+                '修改已完成')
             return;
         }
         console.log('@: number, 输入框没有值');

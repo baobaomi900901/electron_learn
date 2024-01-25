@@ -13,4 +13,4 @@ contextBridge.exposeInMainWorld(
         console.log('预加载进程', res);
         return callback(await ipcRenderer.invoke('add', res));
     },
-});
+}); 
