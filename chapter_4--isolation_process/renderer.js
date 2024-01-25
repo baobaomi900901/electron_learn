@@ -22,4 +22,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    const number = document.querySelector('#number');
+    const btn3 = document.querySelector('#btn3');
+    const result = document.querySelector('#res');
+    btn3.addEventListener('click', () => {
+        if (number.value !== '') {
+            window.api.add((num) => {
+                result.innerHTML = num + number.value * 1;
+            },
+                result.innerHTML)
+            return;
+        }
+        console.log('@: number, 输入框没有值');
+        return;
+
+    });
+
 });
