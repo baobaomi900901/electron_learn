@@ -14,8 +14,10 @@ const createWindow = () => {
         y: targetDisplay.bounds.y + 25,
         webPreferences: {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
-            contextIsolation: false, // 上下文隔离, 关闭后可以使用nodejs的api 
-            nodeIntegration: true, // 是否集成nodejs, 不推荐
+            // contextIsolation: false, // 上下文隔离, 关闭后可以使用nodejs的api 
+            // nodeIntegration: true, // 是否集成nodejs, 不推荐
+            // 沙盒,默认 true,  预加载可以使用nodejs的api, 但是渲染进程不可以
+            sandbox: false,
         }
     });
 
