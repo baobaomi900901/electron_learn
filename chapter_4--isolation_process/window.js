@@ -14,15 +14,29 @@ const createWindow = () => {
         y: targetDisplay.bounds.y + 25,
         webPreferences: {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
-            // contextIsolation: false, // 上下文隔离, 关闭后可以使用nodejs的api 
-            // nodeIntegration: true, // 是否集成nodejs, 不推荐
-            // 沙盒,默认 true,  预加载可以使用nodejs的api, 但是渲染进程不可以
-            sandbox: false,
-        }
+        },
+        // fullscreen: true, // 全屏
+        // center: true, // 居中
+        // frame: false, // 无边框
+        // transparent: true, // 透明
+        // titleBarStyle: 'customButtonsOnHover', // 隐藏标题栏
     });
 
     mainWindow.webContents.openDevTools(); // open dev tools by default
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
+
+    setTimeout(() => {
+        // 设置窗口大小和位置, 以及是否有动画
+        mainWindow.setBounds(
+            {
+                width: 300,
+                height: 300,
+                x: targetDisplay.bounds.x + 300,
+                y: targetDisplay.bounds.y + 300
+            },
+            true
+        )
+    }, 1000);
 };
 
 module.exports = { createWindow };
