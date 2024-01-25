@@ -14,7 +14,8 @@ const createWindow = () => {
         y: targetDisplay.bounds.y + 25,
         webPreferences: {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
-        },
+            contextIsolation: false, // 上下文隔离, 关闭后可以使用nodejs的api 
+        }
     });
 
     mainWindow.webContents.openDevTools(); // open dev tools by default
