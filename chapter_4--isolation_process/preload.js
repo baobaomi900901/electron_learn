@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+// const { contextBridge, ipcRenderer } = require('electron');
 
 // contextBridge.exposeInMainWorld(
 //     'api', {
@@ -8,8 +8,5 @@ const { contextBridge, ipcRenderer } = require('electron');
 // });
 
 
-window.api = {
-    toMain: (msg) => {
-        ipcRenderer.send('mainEvent', msg)
-    }
-}
+const fs = require('fs');
+fs.writeFileSync('message.txt', 'Hello Node.js', 'utf8');

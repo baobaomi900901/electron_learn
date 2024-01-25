@@ -5,7 +5,7 @@ app.whenReady().then(() => {
     createWindow();
 });
 
-ipcMain.on('mainEvent', (event, msg) => {
-    console.log('接收渲染进程的通知:>>', msg);
-})
+// ipcMain.on('mainEvent', (event, msg) => {
+//     console.log('接收渲染进程的通知:>>', msg);
+// })
 
