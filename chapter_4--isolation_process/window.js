@@ -25,18 +25,18 @@ const createWindow = () => {
     mainWindow.webContents.openDevTools(); // open dev tools by default
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
 
-    setTimeout(() => {
-        // 设置窗口大小和位置, 以及是否有动画
-        mainWindow.setBounds(
-            {
-                width: 300,
-                height: 300,
-                x: targetDisplay.bounds.x + 300,
-                y: targetDisplay.bounds.y + 300
-            },
-            true
-        )
-    }, 1000);
+    // setTimeout(() => {
+    //     // 设置窗口大小和位置, 以及是否有动画
+    //     mainWindow.setBounds(
+    //         {
+    //             width: 300,
+    //             height: 300,
+    //             x: targetDisplay.bounds.x + 300,
+    //             y: targetDisplay.bounds.y + 300
+    //         },
+    //         true
+    //     )
+    // }, 1000);
 };
 
 module.exports = { createWindow };

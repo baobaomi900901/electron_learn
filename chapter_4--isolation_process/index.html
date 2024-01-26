@@ -8,11 +8,53 @@
       content="script-src 'self' 'unsafe-inline';"
     />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .set-screen {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 0.5rem;
+        align-items: center;
+        justify-items: center;
+      }
+      .set-screen label {
+        display: inline-block;
+        width: 50px;
+      }
+      #sendWinDis {
+        padding: 0.25rem 0.75rem;
+        background: blue;
+        color: white;
+        border-radius: 1rem;
+        border: none;
+      }
+    </style>
   </head>
   <body>
     <h1 id="title">K-RPA</h1>
     <button id="btn">向主进程发送信息</button>
+    <br />
     <hr />
+    <br />
+    <div class="set-screen">
+      <div class="item">
+        <label for="x">x:</label><input type="text" id="x" />
+      </div>
+      <div class="item">
+        <label for="y">y:</label><input type="text" id="y" />
+      </div>
+      <div class="item">
+        <label for="width">width</label><input type="text" id="width" />
+      </div>
+      <div class="item">
+        <label for="height">height</label><input type="text" id="height" />
+      </div>
+      <button id="sendWinDis">sendWinDis</button>
+    </div>
     <script src="renderer.js"></script>
   </body>
 </html>
