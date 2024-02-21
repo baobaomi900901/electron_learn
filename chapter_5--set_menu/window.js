@@ -12,10 +12,10 @@ const createWindow = () => {
 
     const mainWindow = new BrowserWindow({
         width: 800,
-        height: 600,
-        // alwaysOnTop: true,
-        x: targetDisplay.bounds.x + 25,
-        y: targetDisplay.bounds.y + 25,
+        height: 500,
+        // alwaysOnTop: true, // 窗口置顶
+        x: targetDisplay.bounds.x + 10,
+        y: targetDisplay.bounds.y,
         webPreferences: {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
         },
