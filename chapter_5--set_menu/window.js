@@ -12,7 +12,7 @@ const createWindow = () => {
 
     const mainWindow = new BrowserWindow({
         width: 800,
-        height: 500,
+        height: 900,
         // alwaysOnTop: true, // 窗口置顶
         x: targetDisplay.bounds.x + 10,
         y: targetDisplay.bounds.y,

@@ -9,6 +9,8 @@ contextBridge.exposeInMainWorld(
     }
 });
 
-// 定义一个ping的事件
-ipcRenderer.on('ping', (event, message) => {
-})
+
+window.addEventListener('contextmenu', (e) => {
+    console.log('right click');
+    ipcRenderer.send('mainPopMenu');
+});
