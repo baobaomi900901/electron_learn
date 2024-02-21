@@ -24,6 +24,8 @@ const createWindow = () => {
 
     mainWindow.webContents.openDevTools(); // open dev tools by default
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
+
+    return mainWindow;
 };
 
 module.exports = { createWindow };

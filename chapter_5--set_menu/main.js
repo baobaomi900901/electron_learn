@@ -1,9 +1,11 @@
 const { app, BrowserWindow } = require('electron');
 const { createWindow } = require('./window.js');
-require('./menu');
+const { createMenu } = require('./menu');
 
 app.whenReady().then(() => {
-    createWindow();
+    const win = createWindow();
+    // console.log('main :>>', win);
+    createMenu(win);
 });
 
 // 当所有窗口关闭时, 非 MacOS 退出应用
