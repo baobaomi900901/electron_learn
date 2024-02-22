@@ -3,7 +3,8 @@ const path = require("path");
 const createWindow = () => {
     const displays = screen.getAllDisplays();
     const targetDisplay = displays.find((display) => {
-        return display.id === 2
+        const equipments = ['BenQ EW2780U', 'LG HDR 4K']
+        return equipments.includes(display.label) // 通过显示器名称来定位
     })
 
     const mainWindow = new BrowserWindow({
