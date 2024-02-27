@@ -12,15 +12,14 @@ const createWindow = () => {
 
     const mainWindow = new BrowserWindow({
         width: 800,
-        height: 900,
+        height: 500,
         // alwaysOnTop: true, // 窗口置顶
-        x: targetDisplay.bounds.x + 10,
+        x: targetDisplay.bounds.x + 50,
         y: targetDisplay.bounds.y,
         webPreferences: {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
         },
     });
-
 
     mainWindow.webContents.openDevTools(); // open dev tools by default
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
