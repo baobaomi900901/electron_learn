@@ -1,4 +1,4 @@
-const { BrowserWindow, screen } = require('electron')
+const { BrowserWindow, screen, shell } = require('electron')
 const path = require('path')
 
 const createWindow = () => {
@@ -23,6 +23,13 @@ const createWindow = () => {
 
     mainWindow.webContents.openDevTools(); // open dev tools by default
     mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
+
+    mainWindow.webContents.setWindowOpenHandler(({ url }) => { // 拦截新窗口打开, url为新窗口的url
+        console.log(url);
+        shell.openExternal(url); // 打开外部链接
+
+        return { action: 'deny' }; // 阻止新窗口打开
+    });
 
     return mainWindow;
 };
