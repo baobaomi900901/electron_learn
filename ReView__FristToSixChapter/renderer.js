@@ -9,6 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const m2rBtn = document.querySelector('#m2rBtn')
     m2rBtn.addEventListener('click', async () => {
+        console.log('m2rBtn :>>', m2rBtn);
     })
-
 })

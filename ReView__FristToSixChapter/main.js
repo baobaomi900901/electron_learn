@@ -1,9 +1,9 @@
 const { app, ipcMain } = require('electron')
 const { createWindow } = require('./window.js')
-require('./menu')
+const { createMenu } = require('./menu');
 
 app.whenReady().then(() => {
-    createWindow()
+    const win = createWindow()
     createMenu(win)
 })
 

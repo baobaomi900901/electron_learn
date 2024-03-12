@@ -18,9 +18,9 @@ const createWindow = () => {
             preload: path.resolve(__dirname, "preload.js"), // use a preload script
         },
     });
-    mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
+    mainWindow.loadFile(path.resolve(__dirname, 'index.html'));
 
     return mainWindow;
 };
