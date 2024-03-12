@@ -7,17 +7,13 @@ contextBridge.exposeInMainWorld("api", {
         console.log('ReceiveEventPreload :>>', msg);
         ipcRenderer.send('ReceiveEventFromMain', msg)
     },
-    SendMSGFromPreload: async (msg) => {
-        const result = await ipcRenderer.invoke('SendMSGFromMain', msg)
-        console.log('SendMSGFromPreload :>>', msg);
-        // console.log('SendMSGFromPreload result :>>', result);
-        return result
+    MainToRenderFromPreload: (callback) => {
+        ipcRenderer.on('MainToRender', (event, value) => {
+            callback(value)
+        })
     }
 })
 
-ipcRenderer.on('SendMSGFromMain', (event, msg) => {
-    console.log('SendMSGFromMain :>>', msg);
-})
 
 
 // // 原始做法

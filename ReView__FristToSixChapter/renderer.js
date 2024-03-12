@@ -9,6 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const m2rBtn = document.querySelector('#m2rBtn')
     m2rBtn.addEventListener('click', async () => {
-        console.log('m2rBtn :>>', m2rBtn);
+        // console.log('first')
+        // window.api.MainToRenderFromPreload((value) => {
+        //     console.log('main.js 传递信息给 renderer.js', value);
+        // })
     })
 })

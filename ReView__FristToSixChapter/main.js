@@ -9,7 +9,7 @@ app.whenReady().then(() => {
 
 // 获取渲染进程中的信息
 ipcMain.on('ReceiveEventFromMain', (event, msg) => {
-    console.log('ReceiveEventFromMain :>>', msg);
+    console.log('>>_____ 1. renderer传递信息给main ( ReceiveEventFromMain ) :>>', msg);
 })
 
 // 传递信息给渲染进程
